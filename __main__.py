@@ -271,10 +271,6 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # Выход
             run = False
-        if event.type == pygame.MOUSEWHEEL:  # Выполнение приближения и перерисовка фона (сломано)
-            camera.zoom = Math.fix_precision(Math.clamp(
-                camera.zoom + event.precise_y / 10, 1, 1))
-            camera.render(background, create_background)
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:  # ЛКМ
                 if pygame.key.get_mods() & pygame.KMOD_CTRL:  # Если зажат любой Ctrl
